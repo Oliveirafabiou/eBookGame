@@ -7,7 +7,7 @@
 using namespace std;
 
 class Personagem {
-private:
+protected:
 	string nome;
 	int habilidade;
 	int energia;
@@ -45,4 +45,22 @@ public:
     void usarProvisao();
 
     void adicionarCenaVisitada(const string& cena);
+
+	string getNome() const;
+	void setNome(string& n);
+
+	int getHabilidade() const;
+	void setHabilidade(int h);
+
+	int getEnergia() const;
+	void setEnergia(int e);
+
+	int getSorte() const;
+	void setSorte(int s);
+
+	int getMoedas() const;
+	void setMoedas(int m);
+
+	int getProvisoes() const;
+	void setProvisoes(int p);
 };

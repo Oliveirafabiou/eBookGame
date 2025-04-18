@@ -124,5 +124,112 @@ void Personagem::receberDano(int dano)
 
 void Personagem::recuperarEnergia(int energiaRecuperada)
 {
+	energia += energiaRecuperada;
+    cout << "Você recuperou " << energiaRecuperada << " de energia. Energia atual: " << energia << endl;
+}
 
+void Personagem::adicionarItem(const Item& item)
+{
+    if (tamanhoInventario >= capacidadeInventario) {
+		capacidadeInventario *= 2;
+		Item* novoInventario = new Item[capacidadeInventario];
+
+        for (int i = 0; i < tamanhoInventario; i++) {
+            novoInventario[i] = inventario[i];
+        }
+
+		delete[] inventario;
+		inventario = novoInventario;
+    }
+
+	inventario[tamanhoInventario] = item;
+	tamanhoInventario++;
+
+	cout << "Item adicionado ao inventário: " << item.getNome() << endl;
+}
+
+void Personagem::removerItem(const string& nomeItem) {
+    for (int i = 0; i < tamanhoInventario; i++) {
+        if (inventario[i].getNome() == nomeItem) {
+            for (int j = i; j < tamanhoInventario - 1; j++) {
+				inventario[j] = inventario[j + 1];
+            }
+			tamanhoInventario--;
+			cout << "Item removido: " << nomeItem << endl;
+			return;
+        }
+    }
+	cout << "Item não encontrado: " << nomeItem << endl;
+}
+
+bool Personagem::possuiItem(const string& nomeItem) {
+    for (int i = 0; i < tamanhoInventario; i++) {
+        if (inventario[i].getNome() == nomeItem) {
+			return true;
+        }
+    }
+    return false;
+}
+
+void Personagem::usarProvisao() {
+    if (provisoes) {
+        provisoes--;
+		recuperarEnergia(4);
+    }
+    else {
+		cout << "Você não tem provisões!" << endl;
+    }
+}
+
+void Personagem::adicionarCenaVisitada(const string& cena) {
+	cenasVisitadas[quantidadeCenas] = cena;
+	quantidadeCenas++;
+}
+
+string Personagem::getNome() const {
+	return nome;
+}
+
+void Personagem::setNome(string& n) {
+	nome = n;
+}
+
+int Personagem::getHabilidade() const {
+	return habilidade;
+}
+
+void Personagem::setHabilidade(int h) {
+	habilidade = h;
+}
+
+int Personagem::getEnergia() const {
+	return energia;
+}
+
+void Personagem::setEnergia(int e) {
+	energia = e;
+}
+
+int Personagem::getSorte() const {
+	return sorte;
+}
+
+void Personagem::setSorte(int s) {
+	sorte = s;
+}
+
+int Personagem::getMoedas() const {
+	return moedas;
+}
+
+void Personagem::setMoedas(int m) {
+	moedas = m;
+}
+
+int Personagem::getProvisoes() const {
+	return provisoes;
+}
+
+void Personagem::setProvisoes(int p) {
+	provisoes = p;
 }
