@@ -43,6 +43,7 @@ public:
     void removerItem(const string& nomeItem);
     bool possuiItem(const string& nomeItem);
     void usarProvisao();
+	void adicionarMagia(const Magia& magia);
 
     void adicionarCenaVisitada(const string& cena);
 
@@ -63,4 +64,12 @@ public:
 
 	int getProvisoes() const;
 	void setProvisoes(int p);
+
+	int getTamanhoInventario() const;
+	Item getItem(int index) const;
+
+	int getQuantidadeMagias() const;
+	Magia getMagia(int index) const;
+
+	bool isMago() const;
 };

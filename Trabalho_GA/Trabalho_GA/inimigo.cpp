@@ -10,6 +10,7 @@ Inimigo::Inimigo() : Personagem()
 	this->cenaSucesso = -1;
 	this->cenaFracasso = -1;
 	this->permiteFuga = true;
+
 }
 
 Inimigo::Inimigo(string nome, int habilidade, int energia, int sorte, int moedas, int prvisoes, Item itemDrop, int cenaSucesso, int cenaFracasso, bool permiteFuga) : Personagem(nome, false)
@@ -48,4 +49,8 @@ void Inimigo::exibir() const {
 	cout << "Provisões: " << getProvisoes() << endl;
 	cout << "Pode fugir dele? " << (permiteFuga ? "Sim" : "Não") << endl;
 	cout << "====================" << endl;
+}
+
+Item Inimigo::getItemDrop() const {
+	return this->inventario[0];
 }

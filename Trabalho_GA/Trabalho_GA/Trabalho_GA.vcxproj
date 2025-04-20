@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="cena.h" />
     <ClInclude Include="cenaLoader.h" />
+    <ClInclude Include="combate.h" />
     <ClInclude Include="inimigo.h" />
     <ClInclude Include="inventario.h" />
     <ClInclude Include="item.h" />
@@ -140,11 +141,13 @@
   <ItemGroup>
     <ClCompile Include="cena.cpp" />
     <ClCompile Include="cenaLoader.cpp" />
+    <ClCompile Include="combate.cpp" />
     <ClCompile Include="inimigo.cpp" />
     <ClCompile Include="inventario.cpp" />
     <ClCompile Include="item.cpp" />
     <ClCompile Include="jogo.cpp" />
     <ClCompile Include="magia.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="personagem.cpp" />
     <ClCompile Include="salvamento.cpp" />
   </ItemGroup>

@@ -20,6 +20,7 @@ public:
 
 	int getCenaSucesso() const;
 	int getCenaFracasso() const;
+	Item getItemDrop() const;
 	bool podeFugir() const;
 
 	void exibir() const;

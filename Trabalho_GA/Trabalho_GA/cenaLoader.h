@@ -1,5 +1,5 @@
 #pragma once
-#include <stdlib.h>
-#include <iostream>
 #include <string>
-using namespace std;
+#include "inimigo.h"
+
+bool carregarInimigoDeCena(const std::string& nomeArquivo, Inimigo& inimigo);

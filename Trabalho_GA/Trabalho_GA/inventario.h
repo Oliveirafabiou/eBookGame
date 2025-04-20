@@ -1,5 +1,5 @@
 #pragma once
-#include <stdlib.h>
-#include <iostream>
-#include <string>
-using namespace std;
+#include "personagem.h"
+
+void mostrarInventario(const Personagem& jogador);
+void mostrarMagias(const Personagem& jogador);

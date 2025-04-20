@@ -181,6 +181,27 @@ void Personagem::usarProvisao() {
     }
 }
 
+void Personagem::adicionarMagia(const Magia& magia)
+{
+    if (quantidadeMagias >= capacidadeMagias) {
+		capacidadeMagias *= 2;
+
+		Magia* novoArray = new Magia[capacidadeMagias];
+
+		for (int i = 0; i < quantidadeMagias; i++) {
+			novoArray[i] = magias[i];
+		}
+
+		delete[] magias;
+		magias = novoArray;
+    }
+
+	magias[quantidadeMagias] = magia;
+	quantidadeMagias++;
+
+	cout << "Magia aprendida: " << magia.getNome() << endl;
+}
+
 void Personagem::adicionarCenaVisitada(const string& cena) {
 	cenasVisitadas[quantidadeCenas] = cena;
 	quantidadeCenas++;
@@ -232,4 +253,31 @@ int Personagem::getProvisoes() const {
 
 void Personagem::setProvisoes(int p) {
 	provisoes = p;
+}
+
+
+int Personagem::getTamanhoInventario() const {
+    return tamanhoInventario;
+}
+
+Item Personagem::getItem(int index) const {
+    if (index >= 0 && index < tamanhoInventario) {
+        return inventario[index];
+    }
+    return Item();
+}
+
+int Personagem::getQuantidadeMagias() const {
+    return quantidadeMagias;
+}
+
+Magia Personagem::getMagia(int index) const {
+    if (index >= 0 && index < quantidadeMagias) {
+        return magias[index];
+    }
+    return Magia();
+}
+
+bool Personagem::isMago() const {
+    return ehMago;
 }

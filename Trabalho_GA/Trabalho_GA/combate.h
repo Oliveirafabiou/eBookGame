@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include "personagem.h"
+#include "inimigo.h"
 using namespace std;
 
-void carregarCena(int numeroCena, Personagem& jogador);
+
+void combate(Personagem& jogador, Inimigo& inimigo);
