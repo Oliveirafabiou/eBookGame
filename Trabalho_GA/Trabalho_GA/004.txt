@@ -1,0 +1,3 @@
+Você derrotou o goblin e encontra uma passagem secreta iluminada por tochas.
+
+*Entrar na passagem -> 006

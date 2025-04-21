@@ -4,6 +4,7 @@
 #include "inventario.h"
 #include <iostream>
 #include <ctime>  
+#include <limits>
 using namespace std;
 
 void iniciarJogo() {
@@ -16,8 +17,15 @@ void iniciarJogo() {
     cout << "     BEM-VINDO AO JOGO     " << endl;
     cout << "============================" << endl;
 
-    cout << "\nDigite o nome do seu personagem: ";
-    getline(cin, nome);
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    do {
+        cout << "\nDigite o nome do seu personagem: ";
+        getline(cin, nome);
+
+        if (nome.empty()) {
+            cout << "O nome não pode estar vazio. Tente novamente.\n";
+        }
+    } while (nome.empty());
 
     do {
         cout << "Escolha sua classe ([G]uerreiro / [M]ago): ";

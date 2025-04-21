@@ -1,0 +1,4 @@
+Você acorda em um campo aberto. Ao norte há uma floresta. Ao sul, uma trilha antiga.
+
+*Ir para a floresta -> 002
+*Seguir pela trilha -> 003

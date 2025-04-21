@@ -151,6 +151,15 @@
     <ClCompile Include="personagem.cpp" />
     <ClCompile Include="salvamento.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="001.txt" />
+    <Text Include="002.txt" />
+    <Text Include="003.txt" />
+    <Text Include="004.txt" />
+    <Text Include="005.txt" />
+    <Text Include="006.txt" />
+    <Text Include="007.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

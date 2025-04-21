@@ -1,0 +1,4 @@
+Você foi forçado a recuar após o combate. A floresta está perigosa demais.
+
+*Voltar para o campo aberto -> 001
+*Seguir pela trilha ao sul -> 003
