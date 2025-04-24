@@ -59,7 +59,7 @@ void iniciarJogo() {
     cout << "\nPersonagem criado com sucesso!\n";
     jogador.mostrarStatus();
 
-    system("cls");
+    
     cout << "\nIniciando a aventura..." << endl;
     
 	// Inicia o jogo na cena 1

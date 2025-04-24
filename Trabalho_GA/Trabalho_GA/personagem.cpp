@@ -42,6 +42,20 @@ Personagem::Personagem(string nome, bool mago)
 
 	quantidadeCenas = 0;
 	cenasVisitadas = new string[100];
+
+    // Equipamentos iniciais
+    if (mago) {
+        Magia m1("Chama Etérea", "Lança uma chama azul que causa dano contínuo", 2, 3);
+        Magia m2("Escudo Arcano", "Cria um escudo mágico que reduz o dano", 1, 0);
+        adicionarMagia(m1);
+        adicionarMagia(m2);
+    }
+    else {
+        Item espada("Espada Longa", 'a', true, 3, 0);
+        Item adaga("Adaga", 'a', true, 1, 0);
+        adicionarItem(espada);
+        adicionarItem(adaga);
+    }
 }
 
 Personagem::~Personagem() 
@@ -103,13 +117,25 @@ void Personagem::distribuirAtributos()
 void Personagem::mostrarStatus() 
 {
     cout << "\n===== STATUS DO PERSONAGEM =====" << endl;
-    cout << "Nome: " << nome << (ehMago ? " (Mago)" : " (Guerreiro)") << endl;
-    cout << "Habilidade: " << habilidade << endl;
-    cout << "Energia: " << energia << endl;
-    cout << "Sorte: " << sorte << endl;
-    cout << "Moedas: " << moedas << endl;
-    cout << "Provisões: " << provisoes << endl;
-    cout << "Itens no inventário: " << tamanhoInventario << endl;
+    cout << "-Nome: " << nome << (ehMago ? " (Mago)" : " (Guerreiro)") << endl;
+    cout << "-Habilidade: " << habilidade << endl;
+    cout << "-Energia: " << energia << endl;
+    cout << "-Sorte: " << sorte << endl;
+    cout << "-Moedas: " << moedas << endl;
+    cout << "-Provisões: " << provisoes << endl;
+    cout << "-Quantidade de itens no inventário: " << tamanhoInventario << endl;
+    if (tamanhoInventario != 0) {
+        for (int i = 0; i < tamanhoInventario; i++) {
+            cout << "--- " << inventario[i].getNome() << endl;
+        }
+        
+    }
+    if (ehMago) {
+        cout << "-Magias aprendidas: " << quantidadeMagias << endl;
+        for (int i = 0; i < quantidadeMagias; i++) {
+            cout << "--- " << magias[i].getNome() << endl;
+        }
+    }
     cout << "=================================\n" << endl;
 }
 

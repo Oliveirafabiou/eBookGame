@@ -51,6 +51,19 @@ void Inimigo::exibir() const {
 	cout << "====================" << endl;
 }
 
-Item Inimigo::getItemDrop() const {
-	return this->inventario[0];
+void Inimigo::receberDano(int dano) {
+	energia -= dano;
+
+	if (energia < 0) energia = 0;
+
+	cout << "O inimigo recebeu " << dano << " de dano. Energia restante: " << energia << endl;
+
 }
+
+Item Inimigo::getItemDrop() const {  
+   if (tamanhoInventario == 0) {  
+       throw std::runtime_error("Inventário do inimigo está vazio.");  
+   }  
+   return inventario[0];  
+}
+

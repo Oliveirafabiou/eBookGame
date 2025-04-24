@@ -2,6 +2,7 @@
 
 void combate(Personagem& jogador, Inimigo& inimigo)
 {
+	system("cls");
 	cout << "\n Um combate começou contra " << inimigo.getNome() << "!\n" << endl;
 
 	while (jogador.getEnergia() > 0 && inimigo.getEnergia() > 0) {
@@ -21,10 +22,12 @@ void combate(Personagem& jogador, Inimigo& inimigo)
 
 		if (escolha == 3) {
 			if (inimigo.podeFugir()) {
+				system("cls");
 				cout << "\n Voce fugiu da batalha!" << endl;
 				return;
 			}
 			else {
+				system("cls");
 				cout << "\n Voce nao pode fugir desse inimigo" << endl;
 				continue;
 			}
@@ -54,11 +57,17 @@ void combate(Personagem& jogador, Inimigo& inimigo)
 			}
 
 			inimigo.receberDano(dano);
+			if (inimigo.getEnergia() <= 0) {
+				break;  
+			}
 		}
 		else if (faInimigo > faJogador) {
 			cout << "O inimigo acertou voce!" << endl;
 			int dano = 2;
 			jogador.receberDano(dano);
+			if (jogador.getEnergia() <= 0) {
+				break;  
+			}
 		}
 		else {
 			cout << "Empate! Ninguem causou dano." << endl;
@@ -70,7 +79,14 @@ void combate(Personagem& jogador, Inimigo& inimigo)
 
 		jogador.setMoedas(jogador.getMoedas() + inimigo.getMoedas());
 		jogador.setProvisoes(jogador.getProvisoes() + inimigo.getProvisoes());
-		jogador.adicionarItem(inimigo.getItemDrop());
+		try {
+			Item drop = inimigo.getItemDrop();
+			jogador.adicionarItem(drop);
+			cout << "Você obteve o item: " << drop.getNome() << endl;
+		}
+		catch (const std::exception& e) {
+			cout << "Nenhum item dropado: " << e.what() << endl;
+		}
 
 		cout << "Voce recebeu " << inimigo.getMoedas() << " moedas e " << inimigo.getProvisoes() << " provisoes." << endl;
 		cout << "Voce Obteve o item: " << inimigo.getItemDrop().getNome() << endl;

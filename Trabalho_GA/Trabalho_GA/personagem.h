@@ -36,7 +36,7 @@ public:
     void mostrarStatus();
     bool testarSorte();
 
-    void receberDano(int dano);
+    virtual void receberDano(int dano);
     void recuperarEnergia(int energia);
 
     void adicionarItem(const Item& item);

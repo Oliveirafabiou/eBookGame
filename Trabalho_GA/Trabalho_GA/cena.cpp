@@ -2,6 +2,7 @@
 #include "cenaLoader.h"
 #include "inimigo.h"
 #include "combate.h"
+#include "salvamento.h"
 #include <iomanip>
 #include <fstream>
 #include <sstream>
@@ -57,10 +58,20 @@ void carregarCena(int numeroCena, Personagem& jogador)
 
         if (linha[0] == '*') {
             size_t seta = linha.find("->");
-            if (seta != string::npos) {
-                string texto = linha.substr(1, seta - 1);
-                int destino = stoi(linha.substr(seta + 2));
-                opcoes.push_back({ texto, destino });
+            if (seta != string::npos && seta > 1 && seta + 2 < linha.size()) {
+                string texto = linha.substr(1, seta - 1); // do caractere depois de '*' até antes de "->"
+                string destinoStr = linha.substr(seta + 2); // tudo depois de "->"
+
+                try {
+                    int destino = stoi(destinoStr);
+                    opcoes.push_back({ texto, destino });
+                }
+                catch (...) {
+                    cout << "Erro ao interpretar o destino da opção: \"" << linha << "\"" << endl;
+                }
+            }
+            else {
+                cout << "Opção mal formatada encontrada na cena: \"" << linha << "\"" << endl;
             }
         }
         else {
@@ -72,16 +83,25 @@ void carregarCena(int numeroCena, Personagem& jogador)
         cout << i + 1 << ". " << opcoes[i].first << endl;
     }
 
-    int escolha;
-    cout << "\nEscolha uma opção: ";
-    cin >> escolha;
+    int escolha = 0;
+    do {
+        cout << "\nEscolha uma opção: ";
+        cin >> escolha;
 
-    if (escolha >= 1 && escolha <= opcoes.size()) {
-        carregarCena(opcoes[escolha - 1].second, jogador);
-    }
-    else {
-        cout << "Opção inválida. Fim do jogo." << endl;
-    }
+        if (cin.fail() || escolha < 1 || escolha > opcoes.size()) {
+            cin.clear();              
+            cin.ignore(1000, '\n');   
+            cout << "Opção inválida. Tente novamente.\n";
+        }
+        else {
+            break;
+        }
 
-    arquivo.close();
+    } while (true);
+
+    // Continua o jogo com a escolha válida
+    int proximaCena = opcoes[escolha - 1].second;
+    salvarJogo(jogador, proximaCena);
+    carregarCena(proximaCena, jogador);
+
 }

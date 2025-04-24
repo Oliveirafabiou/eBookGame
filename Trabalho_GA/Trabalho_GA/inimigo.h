@@ -22,6 +22,7 @@ public:
 	int getCenaFracasso() const;
 	Item getItemDrop() const;
 	bool podeFugir() const;
+	void receberDano(int dano) override;
 
 	void exibir() const;
 };

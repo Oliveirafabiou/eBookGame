@@ -2,5 +2,6 @@ Você chega ao Templo do Eco, onde ecos do passado dançam nas paredes. Uma voz fa
 
 "Você é a última âncora. Ou sela o Sussurro... ou o liberta."
 
+*Explorar a sala lateral, onde uma presença sombria o observa -> 011
 *Tentar selar o Sussurro -> 009
 *Aceitar o poder do Sussurro -> 010
