@@ -17,7 +17,7 @@ void iniciarJogo() {
     string entrada;
 
     cout << "============================" << endl;
-    cout << "     BEM-VINDO AO JOGO     " << endl;
+    cout << "     BEM-VINDO(A) AO JOGO     " << endl;
     cout << "============================" << endl;
 
     do {
@@ -26,7 +26,7 @@ void iniciarJogo() {
 
         if (nome.empty()) {
 			system("cls");
-            cout << "O nome não pode estar vazio. Tente novamente.\n";
+            cout << "O nome nao pode estar vazio. Tente novamente.\n";
 
         }
     } while (nome.empty());
@@ -35,10 +35,10 @@ void iniciarJogo() {
         cout << "\nEscolha sua classe ([G]uerreiro / [M]ago): ";
         getline(cin, entrada); 
 
-        // Verifica se a entrada não tem exatamente um caractere
+        // Verifica se a entrada nao tem exatamente um caractere
         if (entrada.length() != 1) { 
             system("cls");
-            cout << "Classe inválida. Tente novamente.\n";
+            cout << "Classe invalida. Tente novamente.\n";
             continue;
         }
 
@@ -46,7 +46,7 @@ void iniciarJogo() {
 
         if (classe != 'G' && classe != 'M') {
             system("cls");
-            cout << "Classe inválida. Tente novamente.\n";
+            cout << "Classe invalida. Tente novamente.\n";
         }
     } while (classe != 'G' && classe != 'M');
 

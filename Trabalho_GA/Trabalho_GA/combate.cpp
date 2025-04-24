@@ -2,21 +2,21 @@
 
 void combate(Personagem& jogador, Inimigo& inimigo)
 {
-	cout << "\n Um combate começou contra " << inimigo.getNome() << "!\n" << endl;
+	cout << "\n Um combate comeï¿½ou contra " << inimigo.getNome() << "!\n" << endl;
 
 	while (jogador.getEnergia() > 0 && inimigo.getEnergia() > 0) {
 		cout << "-------------------------------------" << endl;
 		jogador.mostrarStatus();
 		inimigo.exibir();
 
-		cout << "Ações disponiveis: " << endl;
+		cout << "Acoes disponiveis: " << endl;
 		cout << "1. Atacar" << endl;
 		cout << "2. Usar sorte" << endl;
 		cout << "3. Fugir" << endl;
 
 		int escolha;
 
-		cout << "Escolha sua ação: ";
+		cout << "Escolha sua acao: ";
 		cin >> escolha;
 
 		if (escolha == 3) {
@@ -31,7 +31,7 @@ void combate(Personagem& jogador, Inimigo& inimigo)
 		}
 
 
-		//calculando as forças de ataque
+		//calculando as forcas de ataque
 
 		int faJogador = rand() % 10 + 1 + jogador.getHabilidade();
 		int faInimigo = rand() % 10 + 1 + inimigo.getHabilidade();

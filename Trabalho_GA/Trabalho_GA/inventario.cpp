@@ -3,14 +3,19 @@
 using namespace std;
 
 void mostrarInventario(const Personagem& jogador) {
-    cout << "\n======= INVENTÁRIO =======" << endl;
+    cout << "\n======= INVENTARIO =======" << endl;
 
     if (jogador.getTamanhoInventario() == 0) {
-        cout << "Inventário vazio." << endl;
+        cout << "Inventario vazio." << endl;
     }
     else {
         for (int i = 0; i < jogador.getTamanhoInventario(); i++) {
-            cout << "- " << jogador.getItem(i).getNome() << endl;
+            Item item = jogador.getItem(i);
+            cout << "- " << item.getNome() << " (";
+            cout << (item.getTipo() == 'w' ? "Arma" : item.getTipo() == 'r' ? "Armadura" : "Comum");
+            cout << ", FA: " << item.getBonusFA();
+            cout << ", Dano: " << item.getBonusDano();
+            cout << ", Combate: " << (item.podeUsarEmCombate() ? "Sim" : "NÃ£o") << ")" << endl;
         }
     }
 
@@ -19,7 +24,7 @@ void mostrarInventario(const Personagem& jogador) {
 
 void mostrarMagias(const Personagem& jogador) {
     if (!jogador.isMago()) {
-        cout << "\nEsse personagem não é um mago!" << endl;
+        cout << "\nEsse personagem nao e um mago!" << endl;
         return;
     }
 

@@ -94,7 +94,7 @@ void Personagem::distribuirAtributos()
 
     system("cls");
     cout << "Distribuicao de atributos concluida!" << endl;
-	cout << "\nAqui estão seus atributos:" << endl;
+	cout << "\nAqui estao seus atributos:" << endl;
     cout << "HABILIDADE: " << habilidade << endl;
     cout << "ENERGIA: " << energia << endl;
     cout << "SORTE: " << sorte << endl;
@@ -108,8 +108,8 @@ void Personagem::mostrarStatus()
     cout << "Energia: " << energia << endl;
     cout << "Sorte: " << sorte << endl;
     cout << "Moedas: " << moedas << endl;
-    cout << "Provisões: " << provisoes << endl;
-    cout << "Itens no inventário: " << tamanhoInventario << endl;
+    cout << "Provisï¿½es: " << provisoes << endl;
+    cout << "Itens no inventï¿½rio: " << tamanhoInventario << endl;
     cout << "=================================\n" << endl;
 }
 
@@ -126,13 +126,13 @@ void Personagem::receberDano(int dano)
 {
     energia -= dano;
 	if (energia < 0) energia = 0;
-	cout << "Você recebeu " << dano << " de dano. Energia atual: " << energia << endl;
+	cout << "Vocï¿½ recebeu " << dano << " de dano. Energia atual: " << energia << endl;
 }
 
 void Personagem::recuperarEnergia(int energiaRecuperada)
 {
 	energia += energiaRecuperada;
-    cout << "Você recuperou " << energiaRecuperada << " de energia. Energia atual: " << energia << endl;
+    cout << "Vocï¿½ recuperou " << energiaRecuperada << " de energia. Energia atual: " << energia << endl;
 }
 
 void Personagem::adicionarItem(const Item& item)
@@ -152,10 +152,10 @@ void Personagem::adicionarItem(const Item& item)
     if (tamanhoInventario < capacidadeInventario) {
         inventario[tamanhoInventario] = item;
         tamanhoInventario++;
-        cout << "Item adicionado ao inventário: " << item.getNome() << endl;
+        cout << "Item adicionado ao inventï¿½rio: " << item.getNome() << endl;
     }
     else {
-        cout << "Erro: Não foi possível adicionar o item ao inventário." << endl;
+        cout << "Erro: Nï¿½o foi possï¿½vel adicionar o item ao inventï¿½rio." << endl;
     }
 }
 
@@ -170,7 +170,7 @@ void Personagem::removerItem(const string& nomeItem) {
 			return;
         }
     }
-	cout << "Item não encontrado: " << nomeItem << endl;
+	cout << "Item nï¿½o encontrado: " << nomeItem << endl;
 }
 
 bool Personagem::possuiItem(const string& nomeItem) {
@@ -188,7 +188,7 @@ void Personagem::usarProvisao() {
 		recuperarEnergia(4);
     }
     else {
-		cout << "Você não tem provisões!" << endl;
+		cout << "Vocï¿½ nï¿½o tem provisï¿½es!" << endl;
     }
 }
 

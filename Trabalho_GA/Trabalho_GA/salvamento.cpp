@@ -19,7 +19,7 @@ void salvarJogo(const Personagem& jogador, int cenaAtual) {
         << jogador.getProvisoes() << endl;
     arquivo << cenaAtual << endl;
 
-    // Inventário
+    // Inventï¿½rio
     arquivo << jogador.getTamanhoInventario() << endl;
     for (int i = 0; i < jogador.getTamanhoInventario(); i++) {
         arquivo << jogador.getItem(i).getNome() << endl;
@@ -60,7 +60,7 @@ bool carregarJogo(Personagem& jogador, int& cenaAtual) {
     jogador.setMoedas(moedas);
     jogador.setProvisoes(provisoes);
 
-    // Inventário
+    // Inventario
     int qtdItens;
     arquivo >> qtdItens;
     arquivo.ignore();

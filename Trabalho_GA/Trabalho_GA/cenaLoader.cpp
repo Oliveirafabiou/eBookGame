@@ -6,10 +6,10 @@ using namespace std;
 
 bool carregarInimigoDeCena(const string& nomeArquivo, Inimigo& inimigo) {
     ifstream arquivo(nomeArquivo + ".txt");
-    if (!arquivo.is_open()) {
-        cout << "Erro ao abrir o arquivo da cena: " << nomeArquivo << endl;
+    if (!(arquivo >> habilidade >> energia >> sorte >> moedas >> provisoes)) {
+        cout << "Erro ao ler atributos do inimigo.\n";
         return false;
-    }
+    }    
 
     string linha;
     getline(arquivo, linha);

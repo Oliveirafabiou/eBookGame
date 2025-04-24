@@ -13,7 +13,7 @@ Inimigo::Inimigo() : Personagem()
 
 }
 
-Inimigo::Inimigo(string nome, int habilidade, int energia, int sorte, int moedas, int prvisoes, Item itemDrop, int cenaSucesso, int cenaFracasso, bool permiteFuga) : Personagem(nome, false)
+Inimigo(string nome, int habilidade, int energia, int sorte, int moedas, int provisoes, Item itemDrop, int cenaSucesso, int cenaFracasso, bool permiteFuga)
 {
 	this->setHabilidade(habilidade);
 	this->setEnergia(energia);
@@ -46,11 +46,15 @@ void Inimigo::exibir() const {
 	cout << "Energia: " << getEnergia() << endl;
 	cout << "Sorte: " << getSorte() << endl;
 	cout << "Tesouro: " << getMoedas() << " moedas" << endl;
-	cout << "Provisões: " << getProvisoes() << endl;
-	cout << "Pode fugir dele? " << (permiteFuga ? "Sim" : "Não") << endl;
+	cout << "Provisoes: " << getProvisoes() << endl;
+	cout << "Pode fugir dele? " << (permiteFuga ? "Sim" : "Nao") << endl;
 	cout << "====================" << endl;
 }
 
 Item Inimigo::getItemDrop() const {
-	return this->inventario[0];
+	if (this->getTamanhoInventario() > 0)
+    	return this->inventario[0];
+	else
+    	return Item();
+
 }
