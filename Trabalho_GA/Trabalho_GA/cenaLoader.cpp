@@ -5,7 +5,7 @@
 using namespace std;
 
 bool carregarInimigoDeCena(const string& nomeArquivo, Inimigo& inimigo) {
-    ifstream arquivo("cenas/" + nomeArquivo + ".txt");
+    ifstream arquivo(nomeArquivo + ".txt");
     if (!arquivo.is_open()) {
         cout << "Erro ao abrir o arquivo da cena: " << nomeArquivo << endl;
         return false;

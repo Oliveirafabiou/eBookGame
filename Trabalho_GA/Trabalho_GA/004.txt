@@ -1,3 +1,5 @@
-Você derrotou o goblin e encontra uma passagem secreta iluminada por tochas.
+Após derrotar o cultista, você encontra um pergaminho em seu manto com inscrições que você misteriosamente entende.
 
-*Entrar na passagem -> 006
+Você sente que pode desbloquear algo... uma magia antiga?
+
+*Ler o pergaminho e aprender a magia -> 008

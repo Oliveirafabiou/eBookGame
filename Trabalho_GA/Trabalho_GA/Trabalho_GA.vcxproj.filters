@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Arquivos de Origem\cenas">
-      <UniqueIdentifier>{3120c9e0-5612-4aed-90a6-ef48159db469}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="personagem.h">
@@ -86,25 +83,51 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="001.txt">
-      <Filter>Arquivos de Origem\cenas</Filter>
+      <Filter>Arquivos de Origem</Filter>
     </Text>
     <Text Include="002.txt">
-      <Filter>Arquivos de Origem\cenas</Filter>
+      <Filter>Arquivos de Origem</Filter>
     </Text>
     <Text Include="003.txt">
-      <Filter>Arquivos de Origem\cenas</Filter>
+      <Filter>Arquivos de Origem</Filter>
     </Text>
     <Text Include="004.txt">
-      <Filter>Arquivos de Origem\cenas</Filter>
+      <Filter>Arquivos de Origem</Filter>
     </Text>
     <Text Include="005.txt">
-      <Filter>Arquivos de Origem\cenas</Filter>
+      <Filter>Arquivos de Origem</Filter>
     </Text>
     <Text Include="006.txt">
-      <Filter>Arquivos de Origem\cenas</Filter>
+      <Filter>Arquivos de Origem</Filter>
     </Text>
     <Text Include="007.txt">
-      <Filter>Arquivos de Origem\cenas</Filter>
+      <Filter>Arquivos de Origem</Filter>
     </Text>
+    <Text Include="008.txt">
+      <Filter>Arquivos de Origem</Filter>
+    </Text>
+    <Text Include="009.txt">
+      <Filter>Arquivos de Origem</Filter>
+    </Text>
+    <Text Include="010.txt">
+      <Filter>Arquivos de Origem</Filter>
+    </Text>
+    <Text Include="011.txt">
+      <Filter>Arquivos de Origem</Filter>
+    </Text>
+    <Text Include="012.txt">
+      <Filter>Arquivos de Origem</Filter>
+    </Text>
+    <Text Include="013.txt">
+      <Filter>Arquivos de Origem</Filter>
+    </Text>
+    <Text Include="save.txt">
+      <Filter>Arquivos de Origem</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wiki.md">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </None>
   </ItemGroup>
 </Project>

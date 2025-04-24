@@ -1,4 +1,8 @@
-Você acorda em um campo aberto. Ao norte há uma floresta. Ao sul, uma trilha antiga.
+Acordado pelos gritos e pelo cheiro de cinzas, você emerge dos escombros da vila de Kelmar. Tudo que conhecia foi engolido pelo fogo e por algo ainda mais sombrio: O Sussurro.
 
-*Ir para a floresta -> 002
-*Seguir pela trilha -> 003
+Você não lembra de nada da noite passada. Mas sente em seu peito uma marca queimando, como se algo quisesse despertar dentro de você...
+
+O que restou? Um amuleto com símbolos antigos... e um desejo de vingança.
+
+*Seguir pelas ruínas da vila -> 002
+*Escapar pela floresta em busca de abrigo -> 003

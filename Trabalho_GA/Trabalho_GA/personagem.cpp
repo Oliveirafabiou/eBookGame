@@ -58,24 +58,30 @@ void Personagem::distribuirAtributos()
     int ene = 0;
     int sor = 0;
 
-    cout << "Voce tem 36 pontos de atributos para distribuir entre HABILIDADE, ENERGIA e SORTE." << endl;
-    cout << "Lembre-se que sua HABILIDADE e SORTE devem ser no minimo 6 e maximo 12.\nJa a sua ENERGIA deve ser no minimo 12 e no maximo 24." << endl;
-    cout << "Distribua os pontos entre os atributos." << endl;
+    cout << "\nVoce tem 36 pontos de atributos para distribuir entre HABILIDADE, ENERGIA e SORTE.\n" << endl;
+    cout << "Lembre-se que sua HABILIDADE e SORTE devem ser no minimo 6 e maximo 12.\n\nJa a sua ENERGIA deve ser no minimo 12 e no maximo 24.\n" << endl;
+    cout << "Distribua os pontos entre os atributos.\n" << endl;
     while (true)
     {
-        cout << "HABILIDADE (min. 6): " << endl;
+        cout << "\nHABILIDADE (min. 6): " << endl;
         cin >> hab;
-        cout << "ENERGIA (min. 12): " << endl;
+        cout << "\nENERGIA (min. 12): " << endl;
         cin >> ene;
-        cout << "SORTE (min. 6): " << endl;
+        cout << "\nSORTE (min. 6): " << endl;
         cin >> sor;
 
         int pontosUsados = hab + ene + sor;
         int pontosRestantes = pontos - pontosUsados;
 
         if (hab < 6 || hab > 12 || ene < 12 || ene > 24 || sor < 6 || sor > 12 || pontosRestantes != 0) {
-            cout << "Distribuicao invalida. ";
-            cout << "Voce ainda tem " << pontosRestantes << " ponto(s) para distribuir." << endl;
+            system("cls");
+            cout << "Distribuicao invalida. \n";
+            if (pontosRestantes < 0) {
+                cout << "Voce usou " << abs(pontosRestantes) << " ponto(s) a mais do que o permitido.\nPor favor distribua novamente" << endl;
+            }
+            else {
+                cout << "Voce ainda tem " << pontosRestantes << " ponto(s) para distribuir.\nPor favor distribua novamente" << endl;
+            }
         }
         else {
             break;
@@ -86,8 +92,9 @@ void Personagem::distribuirAtributos()
 	energia = ene;
     sorte = sor;
 
+    system("cls");
     cout << "Distribuicao de atributos concluida!" << endl;
-	cout << "Aqui estão seus atributos:" << endl;
+	cout << "\nAqui estão seus atributos:" << endl;
     cout << "HABILIDADE: " << habilidade << endl;
     cout << "ENERGIA: " << energia << endl;
     cout << "SORTE: " << sorte << endl;
@@ -142,10 +149,14 @@ void Personagem::adicionarItem(const Item& item)
 		inventario = novoInventario;
     }
 
-	inventario[tamanhoInventario] = item;
-	tamanhoInventario++;
-
-	cout << "Item adicionado ao inventário: " << item.getNome() << endl;
+    if (tamanhoInventario < capacidadeInventario) {
+        inventario[tamanhoInventario] = item;
+        tamanhoInventario++;
+        cout << "Item adicionado ao inventário: " << item.getNome() << endl;
+    }
+    else {
+        cout << "Erro: Não foi possível adicionar o item ao inventário." << endl;
+    }
 }
 
 void Personagem::removerItem(const string& nomeItem) {

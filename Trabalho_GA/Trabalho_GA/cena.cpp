@@ -13,9 +13,8 @@ void carregarCena(int numeroCena, Personagem& jogador)
     ostringstream nomeArq;
     nomeArq << setfill('0') << setw(3) << numeroCena;
 
-    ifstream arquivo("cenas/" + nomeArq.str() + ".txt");
+    ifstream arquivo(nomeArq.str() + ".txt");
 
-    cout << "Tentando abrir: cenas/" << nomeArq.str() << ".txt" << endl;
 
     if (!arquivo.is_open()) {
         cout << "Erro ao abrir a cena " << numeroCena << endl;

@@ -1,4 +1,3 @@
-Você foi forçado a recuar após o combate. A floresta está perigosa demais.
+O cultista o atinge com um golpe direto no peito. Você cai desacordado e acorda horas depois em meio às cinzas, enfraquecido.
 
-*Voltar para o campo aberto -> 001
-*Seguir pela trilha ao sul -> 003
+*Lutar para se levantar e seguir pela floresta -> 003

@@ -1,11 +1,11 @@
 m
-Goblin
-5
-6
+Cultista Sombrio
+7
+8
+4
 3
-5
 1
-Faca
+Túnica Rúnica
 004
 005
-s
+n

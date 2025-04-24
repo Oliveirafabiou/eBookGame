@@ -1,3 +1,5 @@
-Você encontrou um santuário escondido. Um velho mago o saúda e oferece proteção.
+A aldeã sorri ao receber sua ajuda. Ela entrega um anel mágico como gratidão, dizendo:
 
-x
+"Você carrega a Marca... Só você pode impedir o retorno do Sussurro. Procure o Templo do Eco ao norte."
+
+*Seguir rumo ao norte -> 008

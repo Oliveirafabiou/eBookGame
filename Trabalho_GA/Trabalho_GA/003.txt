@@ -1,3 +1,4 @@
-Você segue pela trilha e encontra uma carroça abandonada com uma pequena bolsa de moedas.
+Você encontra uma aldeã ferida entre os arbustos. Ela implora por ajuda, estendendo uma pequena bolsa com um medalhão mágico.
 
-*Seguir em frente -> 006
+*Curar a aldeã com provisões -> 006
+*Ignorar e seguir em frente -> 007

@@ -1,3 +1,3 @@
-Você entrou em uma caverna escura, mas caiu em uma armadilha. Fim de linha.
+Você segue sozinho pela trilha. Uma sensação estranha permanece. Algo dentro de você se fecha. O amuleto pulsa em vermelho.
 
-x
+*Continuar viagem silenciosamente -> 008	
