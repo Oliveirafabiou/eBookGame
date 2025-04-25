@@ -59,8 +59,8 @@ void carregarCena(int numeroCena, Personagem& jogador)
         if (linha[0] == '*') {
             size_t seta = linha.find("->");
             if (seta != string::npos && seta > 1 && seta + 2 < linha.size()) {
-                string texto = linha.substr(1, seta - 1); // do caractere depois de '*' até antes de "->"
-                string destinoStr = linha.substr(seta + 2); // tudo depois de "->"
+                string texto = linha.substr(1, seta - 1); 
+                string destinoStr = linha.substr(seta + 2); 
 
                 try {
                     int destino = stoi(destinoStr);
