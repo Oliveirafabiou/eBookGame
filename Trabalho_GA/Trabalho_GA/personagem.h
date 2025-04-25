@@ -45,6 +45,7 @@ public:
     bool possuiItem(const string& nomeItem);
     void usarProvisao();
 	void adicionarMagia(const Magia& magia);
+	void setAtributos(string nome, bool mago);
 
     void adicionarCenaVisitada(const string& cena);
 

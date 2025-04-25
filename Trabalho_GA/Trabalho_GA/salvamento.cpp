@@ -53,7 +53,7 @@ bool carregarJogo(Personagem& jogador, int& cenaAtual) {
     arquivo >> cenaAtual;
     arquivo.ignore(); 
 
-    jogador = Personagem(nome, mago);
+    jogador.setAtributos(nome, mago);
     jogador.setHabilidade(habilidade);
     jogador.setEnergia(energia);
     jogador.setSorte(sorte);

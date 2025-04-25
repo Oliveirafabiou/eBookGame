@@ -28,7 +28,7 @@ void carregarCena(int numeroCena, Personagem& jogador)
         combate(jogador, inimigo);
 
         if (jogador.getEnergia() <= 0) {
-            cout << "Fim de jogo." << endl;
+            cout << "Fim de jogo, voce morreu!" << endl;
             return;
         }
 
@@ -52,7 +52,7 @@ void carregarCena(int numeroCena, Personagem& jogador)
 
     while (getline(arquivo, linha)) {
         if (linha == "x") {
-            cout << "\nFim de jogo!" << endl;
+            cout << "\nFim de jogo, obrigado por jogar!" << endl;
             return;
         }
 

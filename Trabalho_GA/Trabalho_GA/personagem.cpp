@@ -94,6 +94,11 @@ Personagem::Personagem(string nome, bool mago, bool inicializarComItens) {
     }
 }
 
+void Personagem::setAtributos(string nome, bool mago) {
+    this->nome = nome;
+    this->ehMago = mago;
+}
+
 Personagem::~Personagem() 
 {
 	delete[] inventario;
@@ -127,10 +132,14 @@ void Personagem::distribuirAtributos()
             system("cls");
             cout << "Distribuicao invalida. \n";
             if (pontosRestantes < 0) {
-                cout << "Voce usou " << abs(pontosRestantes) << " ponto(s) a mais do que o permitido.\nPor favor distribua novamente" << endl;
+                cout << "Voce usou " << abs(pontosRestantes) << " ponto(s) a mais do que o permitido.\nPor favor distribua todos novamente!" << endl;
+            }
+            else if (pontosRestantes == 0) {
+                cout << "Voce distribuiu mais pontos do que o permitido em um dos atributos.\nPor favor distribua todos os pontos novamente!" << endl;
+                cout << "Voce tem: " << pontosUsados << " pontos para distribuir." << endl;
             }
             else {
-                cout << "Voce ainda tem " << pontosRestantes << " ponto(s) para distribuir.\nPor favor distribua novamente" << endl;
+                cout << "Sobraram " << pontosRestantes << " ponto(s) para distribuir.\nPor favor distribua todos os pontos novamente!" << endl;
             }
         }
         else {
