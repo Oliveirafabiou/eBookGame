@@ -23,7 +23,7 @@ void carregarCena(int numeroCena, Personagem& jogador)
     }
 
     // Verifica se a cena tem inimigo
-    Inimigo inimigo;
+    Inimigo inimigo{};
     if (carregarInimigoDeCena(nomeArq.str(), inimigo)) {
         combate(jogador, inimigo);
 
@@ -99,7 +99,7 @@ void carregarCena(int numeroCena, Personagem& jogador)
 
     } while (true);
 
-    // Continua o jogo com a escolha válida
+    
     int proximaCena = opcoes[escolha - 1].second;
     salvarJogo(jogador, proximaCena);
     carregarCena(proximaCena, jogador);

@@ -18,6 +18,7 @@ public:
 		int moedas, int provisoes, Item itemDrop,
 		int cenaSucesso, int cenaFracasso, bool permiteFuga = true);
 
+	void setAtributos(string nome, int habilidade, int energia, int sorte, int moedas, int prvisoes, Item itemDrop, int cenaSucesso, int cenaFracasso, bool permiteFuga);
 	int getCenaSucesso() const;
 	int getCenaFracasso() const;
 	Item getItemDrop() const;

@@ -30,7 +30,8 @@ protected:
 public:
 	Personagem();
     Personagem(string nome, bool mago);
-    ~Personagem();
+	Personagem(string nome, bool mago, bool inicializaComItens);
+	~Personagem();
 
     void distribuirAtributos();
     void mostrarStatus();

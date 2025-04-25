@@ -39,11 +39,11 @@ void combate(Personagem& jogador, Inimigo& inimigo)
 		int faJogador = rand() % 10 + 1 + jogador.getHabilidade();
 		int faInimigo = rand() % 10 + 1 + inimigo.getHabilidade();
 
-		cout << "\n Forca de ataque do jogador: " << faJogador << endl;
-		cout << " Forca de ataque do inimigo: " << faInimigo << endl;
+		cout << "\nForca de ataque do jogador: " << faJogador << endl;
+		cout << "Forca de ataque do inimigo: " << faInimigo << endl;
 
 		if (faJogador > faInimigo) {
-			cout << "\n Voce acertou o inimigo!" << endl;
+			cout << "\nVoce acertou o inimigo!" << endl;
 			int dano = 2;
 			if (escolha == 2) {
 				if (jogador.testarSorte()) {
@@ -75,12 +75,13 @@ void combate(Personagem& jogador, Inimigo& inimigo)
 	}
 
 	if (inimigo.getEnergia() <= 0) {
-		cout << "\n Voce venceu o combate!" << endl;
+		cout << "\nVoce venceu o combate!" << endl;
 
 		jogador.setMoedas(jogador.getMoedas() + inimigo.getMoedas());
 		jogador.setProvisoes(jogador.getProvisoes() + inimigo.getProvisoes());
 		try {
 			Item drop = inimigo.getItemDrop();
+			cout << "O inimigo derrubou o item: " << drop.getNome() << endl;
 			jogador.adicionarItem(drop);
 			cout << "Você obteve o item: " << drop.getNome() << endl;
 		}
@@ -93,7 +94,7 @@ void combate(Personagem& jogador, Inimigo& inimigo)
 
 	}
 	else if (jogador.getEnergia() <= 0) {
-		cout << "\n Voce foi derrotado..." << endl;
+		cout << "\nVoce foi derrotado..." << endl;
 	}
 
 

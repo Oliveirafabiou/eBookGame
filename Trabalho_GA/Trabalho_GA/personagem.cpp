@@ -58,6 +58,42 @@ Personagem::Personagem(string nome, bool mago)
     }
 }
 
+Personagem::Personagem(string nome, bool mago, bool inicializarComItens) {
+    this->nome = nome;
+    this->ehMago = mago;
+    habilidade = 0;
+    energia = 0;
+    sorte = 0;
+    moedas = 0;
+    provisoes = 2;
+
+    capacidadeInventario = 10;
+    tamanhoInventario = 0;
+    inventario = new Item[capacidadeInventario];
+
+    capacidadeMagias = 5;
+    quantidadeMagias = 0;
+    magias = new Magia[capacidadeMagias];
+
+    quantidadeCenas = 0;
+    cenasVisitadas = new string[100];
+
+    if (inicializarComItens) {
+        if (mago) {
+            Magia m1("Chama Etérea", "Lança uma chama azul que causa dano contínuo", 2, 3);
+            Magia m2("Escudo Arcano", "Cria um escudo mágico que reduz o dano", 1, 0);
+            adicionarMagia(m1);
+            adicionarMagia(m2);
+        }
+        else {
+            Item espada("Espada Longa", 'a', true, 3, 0);
+            Item adaga("Adaga", 'a', true, 1, 0);
+            adicionarItem(espada);
+            adicionarItem(adaga);
+        }
+    }
+}
+
 Personagem::~Personagem() 
 {
 	delete[] inventario;
@@ -123,12 +159,11 @@ void Personagem::mostrarStatus()
     cout << "-Sorte: " << sorte << endl;
     cout << "-Moedas: " << moedas << endl;
     cout << "-Provisões: " << provisoes << endl;
-    cout << "-Quantidade de itens no inventário: " << tamanhoInventario << endl;
     if (tamanhoInventario != 0) {
         for (int i = 0; i < tamanhoInventario; i++) {
             cout << "--- " << inventario[i].getNome() << endl;
         }
-        
+
     }
     if (ehMago) {
         cout << "-Magias aprendidas: " << quantidadeMagias << endl;
@@ -301,7 +336,7 @@ Item Personagem::getItem(int index) const {
     if (index >= 0 && index < tamanhoInventario) {
         return inventario[index];
     }
-    return Item();
+    return Item(); 
 }
 
 int Personagem::getQuantidadeMagias() const {

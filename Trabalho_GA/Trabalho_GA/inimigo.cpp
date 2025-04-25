@@ -13,8 +13,10 @@ Inimigo::Inimigo() : Personagem()
 
 }
 
-Inimigo::Inimigo(string nome, int habilidade, int energia, int sorte, int moedas, int prvisoes, Item itemDrop, int cenaSucesso, int cenaFracasso, bool permiteFuga) : Personagem(nome, false)
+Inimigo::Inimigo(string nome, int habilidade, int energia, int sorte, int moedas, int prvisoes, Item itemDrop, int cenaSucesso, int cenaFracasso, bool permiteFuga)
+	: Personagem(nome, false, false)
 {
+	this->setNome(nome);
 	this->setHabilidade(habilidade);
 	this->setEnergia(energia);
 	this->setSorte(sorte);
@@ -25,6 +27,25 @@ Inimigo::Inimigo(string nome, int habilidade, int energia, int sorte, int moedas
 	this->cenaSucesso = cenaSucesso;
 	this->cenaFracasso = cenaFracasso;
 	this->permiteFuga = permiteFuga;
+
+	cout << "Inimigo criado: " << nome << " com item: " << itemDrop.getNome() << endl;
+}
+
+void Inimigo::setAtributos(string nome, int habilidade, int energia, int sorte, int moedas, int prvisoes, Item itemDrop, int cenaSucesso, int cenaFracasso, bool permiteFuga)
+{
+	this->setNome(nome);
+	this->setHabilidade(habilidade);
+	this->setEnergia(energia);
+	this->setSorte(sorte);
+	this->setMoedas(moedas);
+	this->setProvisoes(provisoes);
+	this->adicionarItem(itemDrop);
+
+	this->cenaSucesso = cenaSucesso;
+	this->cenaFracasso = cenaFracasso;
+	this->permiteFuga = permiteFuga;
+
+	cout << "Inimigo criado: " << nome << " com item: " << itemDrop.getNome() << endl;
 }
 
 int Inimigo::getCenaSucesso() const {
@@ -39,7 +60,8 @@ bool Inimigo::podeFugir() const {
 	return permiteFuga;
 }
 
-void Inimigo::exibir() const {
+void Inimigo::exibir() const 
+{
 	cout << "===== INIMIGO =====" << endl;
 	cout << "Nome: " << getNome() << endl;
 	cout << "Habilidade: " << getHabilidade() << endl;
@@ -48,7 +70,16 @@ void Inimigo::exibir() const {
 	cout << "Tesouro: " << getMoedas() << " moedas" << endl;
 	cout << "Provisões: " << getProvisoes() << endl;
 	cout << "Pode fugir dele? " << (permiteFuga ? "Sim" : "Não") << endl;
-	cout << "====================" << endl;
+	cout << "-Quantidade de itens no inventário: " << tamanhoInventario << endl;
+	if (tamanhoInventario != 0) {
+		for (int i = 0; i < tamanhoInventario; i++) {
+			string x = inventario[i].getNome();
+			cout << "--- " << x << endl;
+		}
+
+	}
+	cout << "====================\n" << endl;
+
 }
 
 void Inimigo::receberDano(int dano) {
@@ -63,7 +94,8 @@ void Inimigo::receberDano(int dano) {
 Item Inimigo::getItemDrop() const {  
    if (tamanhoInventario == 0) {  
        throw std::runtime_error("Inventário do inimigo está vazio.");  
-   }  
+   }
+  
    return inventario[0];  
 }
 

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <limits>
 using namespace std;
 
 bool carregarInimigoDeCena(const string& nomeArquivo, Inimigo& inimigo) {
@@ -23,15 +24,29 @@ bool carregarInimigoDeCena(const string& nomeArquivo, Inimigo& inimigo) {
     char permiteFuga;
 
     getline(arquivo, nome);
+    cout << "Nome do inimigo: [" << nome << "]" << endl;
+
     arquivo >> habilidade >> energia >> sorte >> moedas >> provisoes;
-    arquivo.ignore();
+    cout << "Atributos: hab=" << habilidade << " ene=" << energia << " sor=" << sorte << " moedas=" << moedas << " prov=" << provisoes << endl;
+
+    arquivo.ignore(numeric_limits<streamsize>::max(), '\n');
+
     getline(arquivo, nomeItem);
+    cout << "Item do inimigo: [" << nomeItem << "]" << endl;
+
     arquivo >> cenaSucesso >> cenaFracasso;
+    cout << "Cenas: sucesso=" << cenaSucesso << " fracasso=" << cenaFracasso << endl;
+
     arquivo >> permiteFuga;
-    arquivo.ignore();
+    cout << "Permite fuga? [" << permiteFuga << "]" << endl;
 
-    Item item(nomeItem, 'w', true, 1, 1); // simplificado
-    inimigo = Inimigo(nome, habilidade, energia, sorte, moedas, provisoes, item, cenaSucesso, cenaFracasso, permiteFuga == 's');
+    Item item(nomeItem, 'w', true, 1, 1);
+    inimigo.setAtributos(nome, habilidade, energia, sorte, moedas, provisoes, item, cenaSucesso, cenaFracasso, permiteFuga == 's');
 
+    Inimigo* in = new Inimigo(nome, habilidade, energia, sorte, moedas, provisoes, item, cenaSucesso, cenaFracasso, permiteFuga == 's');
+
+    int a = 10;
+
+    delete in;
     return true;
 }

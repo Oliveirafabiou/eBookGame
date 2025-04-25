@@ -1,10 +1,9 @@
 fabio
 0
 12 12 12
-3 4
+0 2
 11
-3
+2
 Espada Longa
 Adaga
-
 0
