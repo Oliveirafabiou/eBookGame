@@ -74,4 +74,6 @@ public:
 	Magia getMagia(int index) const;
 
 	bool isMago() const;
+	int getForcaAtaque() const;
+
 };

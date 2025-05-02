@@ -362,3 +362,18 @@ Magia Personagem::getMagia(int index) const {
 bool Personagem::isMago() const {
     return ehMago;
 }
+
+int Personagem::getForcaAtaque() const {
+    int ataqueBase = habilidade;
+    int maiorAtaque = 0;
+
+    for (int i = 0; i < tamanhoInventario; i++) {
+        if (inventario[i].getTipo() == 'a') {
+            int ataqueItem = inventario[i].getBonusFA();
+            if (ataqueItem > maiorAtaque) {
+                maiorAtaque = ataqueItem;
+            }
+        }
+    }
+    return ataqueBase + maiorAtaque;
+}

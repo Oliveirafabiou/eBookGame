@@ -36,8 +36,8 @@ void combate(Personagem& jogador, Inimigo& inimigo)
 
 		//calculando as forças de ataque
 
-		int faJogador = rand() % 10 + 1 + jogador.getHabilidade();
-		int faInimigo = rand() % 10 + 1 + inimigo.getHabilidade();
+		int faJogador = rand() % 10 + 1 + jogador.getForcaAtaque();
+		int faInimigo = rand() % 10 + 1 + inimigo.getForcaAtaque();
 
 		cout << "\nForca de ataque do jogador: " << faJogador << endl;
 		cout << "Forca de ataque do inimigo: " << faInimigo << endl;
